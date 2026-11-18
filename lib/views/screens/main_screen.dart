@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:godgreat_app/views/screens/nav_screens/account_screen.dart';
+import 'package:godgreat_app/views/screens/nav_screens/cart_screen.dart';
+import 'package:godgreat_app/views/screens/nav_screens/category_screen.dart';
+import 'package:godgreat_app/views/screens/nav_screens/favorite_screen.dart';
+import 'package:godgreat_app/views/screens/nav_screens/home_screen.dart';
+import 'package:godgreat_app/views/screens/nav_screens/stores_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -8,33 +14,59 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int _pageIndex = 0;
+  final List<Widget> _pages = [
+    HomeScreen(),
+    FavoriteScreen(),
+    const CategoryScreen(),
+    StoresScreen(),
+    CartScreen(),
+    AccountScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.purple,
+        unselectedItemColor: Colors.grey,
+        currentIndex: _pageIndex,
+        onTap: (value) {
+          setState(() {
+            _pageIndex = value;
+          });
+        },
+        type: BottomNavigationBarType.fixed,
+
         items: [
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/icons/home.png")),
+            icon: Image.asset("assets/icons/home.png", width: 24, height: 24),
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/icons/love.png")),
+            icon: Image.asset("assets/icons/love.png", width: 24, height: 24),
             label: "Favorite",
           ),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            label: "Categories",
+          ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/icons/mart.png")),
+            icon: Image.asset("assets/icons/mart.png", width: 24, height: 24),
             label: "Stores",
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/icons/cart.png")),
+            icon: Image.asset("assets/icons/cart.png", width: 24, height: 24),
             label: "Cart",
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(AssetImage("assets/icons/user.png")),
+            icon: Image.asset("assets/icons/user.png", width: 24, height: 24),
             label: "Account",
           ),
         ],
       ),
+      body: _pages[_pageIndex],
     );
   }
 }

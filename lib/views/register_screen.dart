@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:godgreat_app/controllers/auth_controller.dart';
-import 'package:godgreat_app/views/sign_up_screen.dart';
+import 'package:godgreat_app/views/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -120,7 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       prefixIcon: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Image.asset(
-                          'assets/images/email.png',
+                          'assets/icons/email.png',
                           width: 17,
                           height: 20,
                         ),
@@ -168,7 +168,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       prefixIcon: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Image.asset(
-                          'assets/images/user.jpeg',
+                          'assets/icons/user.jpeg',
                           width: 17,
                           height: 20,
                         ),
@@ -206,7 +206,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       prefixIcon: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Image.asset(
-                          'assets/images/password.png',
+                          'assets/icons/password.png',
                           width: 17,
                           height: 20,
                         ),
@@ -289,7 +289,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       color: Colors.white,
                                     )
                                     : Text(
-                                      'Sign Up',
+                                      'Register',
                                       style: GoogleFonts.getFont(
                                         'Lato',
                                         color: Colors.white,
@@ -319,7 +319,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
+                              builder: (context) => LoginScreen(),
                             ),
                           );
                         },

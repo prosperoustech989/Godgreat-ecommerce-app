@@ -3,13 +3,13 @@ import 'package:godgreat_app/controllers/auth_controller.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:godgreat_app/views/register_screen.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _formkey = GlobalKey<FormState>();
   final AuthController _authController = AuthController();
   late String email;
@@ -111,7 +111,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         prefixIcon: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Image.asset(
-                            'assets/images/email.png',
+                            'assets/icons/email.png',
                             width: 17,
                             height: 20,
                           ),
@@ -149,7 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         prefixIcon: Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: Image.asset(
-                            'assets/images/password.png',
+                            'assets/icons/password.png',
                             width: 17,
                             height: 20,
                           ),
@@ -165,7 +165,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           LoginUsers(context);
                           print('pass');
                         } else {
-                          print('failed');
+                          print('failed'); 
                         }
                       },
                       child: Container(
@@ -237,7 +237,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         color: Colors.white,
                                       )
                                       : Text(
-                                        'Sign in',
+                                        'Login',
                                         style: GoogleFonts.getFont(
                                           'Lato',
                                           color: Colors.white,

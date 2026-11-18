@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: ^6.3.0
   http: ^1.6.0
+  flutter_riverpod: 2.5.1
+  shared_preferences: 2.2.3
    
   
 dev_dependencies:
@@ -58,11 +60,10 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
-  uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
+  uses-material-design: true 
+ # To add assets to your application, add an assets section, like this:
   assets:
-    - assests/icons/
+    - assets/icons/
     - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
